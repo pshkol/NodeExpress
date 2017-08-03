@@ -2,8 +2,30 @@
 <html>
 <head>
     <title>Meadowlark Travel</title>
+    {{_sections.head}}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta charset="utf-8" />
+    <style media="screen">
+    a.currency {
+      text-decoration: none;
+      }
+      .currency.selected {
+      font-weight: bold;
+      font-size: 150%;
+      }
+    </style>
 </head>
 <body>
+  {{#if flash}}
+
+      <div class="alert alert-dismissible alert-{{flash.type}}">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <strong>{{flash.intro}}</strong> {{{flash.message}}}
+      </div>
+
+  {{/if}}
     {{{body}}}
+    <script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
+    {{_section.jquery}}
 </body>
 </html>
